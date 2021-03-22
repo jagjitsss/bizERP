@@ -29,7 +29,8 @@
     "react-scripts": "3.4.1",
     "react-swipeable-views": "0.13.9",
     "react-table": "7.1.0",
-    "react-tagsinput": "3.19.0"
+    "react-tagsinput": "3.19.0",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -38,7 +39,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
-    },
+  },
   "optionalDependencies": {
     "@types/googlemaps": "3.39.6",
     "@types/markerclustererplus": "2.1.33",
