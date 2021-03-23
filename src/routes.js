@@ -35,6 +35,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import DateRange from "@material-ui/icons/DateRange";
 import GridOn from "@material-ui/icons/GridOn";
 import Image from "@material-ui/icons/Image";
+import SettingsIcon from '@material-ui/icons/Settings';
 import Place from "@material-ui/icons/Place";
 import Timeline from "@material-ui/icons/Timeline";
 import WidgetsIcon from "@material-ui/icons/Widgets";
@@ -64,6 +65,72 @@ import Producttype_master from 'components/pages/master/Producttype-master';
 import Item_master from 'components/pages/master/Item-master';
 import partycategory_master from 'components/pages/master/Partycategory-master';
 
+//PURCHASE PAGES
+import Good_reciept from 'components/pages/purchase-pages/Goods-receipt';
+import Purchase_order from 'components/pages/purchase-pages/Purchase-order';
+import Journal_voucher from 'components/pages/purchase-pages/Purchase-return';
+import Purchase_invoice from 'components/pages/purchase-pages/Purchase-invoice';
+import Purchase_return from 'components/pages/purchase-pages/Purchase-return';
+
+//SALE PAGES
+import Sales_oredr from 'components/pages/salepages/Sales-order';
+import Goods_Dispatch from 'components/pages/salepages/Goods-Dispatch';
+import Sales_return from 'components/pages/salepages/Sales-return';
+import Sales_invoice from 'components/pages/salepages/Sales-invoice';
+import Report_sale from 'components/pages/salepages/Report-sale';
+//ACCOUNTPAGES
+import Receipt_voucher from 'components/pages/Accountpages/Receipt-voucher';
+import Report_account from 'components/pages/Accountpages/Report-account';
+import Service_voucher from 'components/pages/Accountpages/Service-voucher';
+import Payment_voucher from 'components/pages/Accountpages/Payment-voucher';
+//import Journal_voucher from 'components/pages/Accountpages/Journal-voucher';
+import Multiledger_report from 'components/pages/Accountpages/Multiledger-report';
+import Ledger_report from 'components/pages/Accountpages/Ledger-report';
+import Adjustment from 'components/pages/Accountpages/Adjustment';
+import Debtorspending_bill from 'components/pages/Accountpages/Debtorspending-bill';
+import Creditorspending_bill from 'components/pages/Accountpages/Creditorspending-bill';
+import Bankreconciliation from 'components/pages/Accountpages/Bankreconciliation';
+import ClearCheckentry_list from 'components/pages/Accountpages/ClearCheckentry-list';
+import Credit_note from 'components/pages/Accountpages/Credit-note';
+import Debit_note from 'components/pages/Accountpages/Debit-note';
+
+//INVENTORY PAGES
+import Opening_stock from 'components/pages/Enventorypages/Opening-stock';
+import StockTransfer from 'components/pages/Enventorypages/StockTransfer';
+import StockTransferRequest from 'components/pages/Enventorypages/StockTransferRequest';
+import StoreReceipt from 'components/pages/Enventorypages/StoreReceipt';
+import Report_enventory from 'components/pages/Enventorypages/Report-enventory';
+import Stock_summary from 'components/pages/Enventorypages/Stock-summary';
+import MaterialRequistion from 'components/pages/Enventorypages/MaterialRequistion';
+import Purchase_indent from 'components/pages/Enventorypages/Purchase-indent';
+
+//Productionpages
+import Cashew_production from 'components/pages/Productionpages/Cashew-production';
+import Report_production from 'components/pages/Productionpages/Report-production';
+import Bom from 'components/pages/Productionpages/Bom';
+import Production_voucher from 'components/pages/Productionpages/Production-voucher';
+//reportpages
+import Globalitemwisereport from 'components/pages/Reportpages/Globalitemwisereport';
+import Globalreportfor_statem from 'components/pages/Reportpages/Globalreportfor-statem';
+import Salerelated_reports from 'components/pages/Reportpages/Salerelated-reports';
+//datatransferpages
+import Dtaa_transfer from 'components/pages/DataTransferpage/data-transfer';
+import Tallyexport_data from 'components/pages/ExportDataForTally/Tallyexport-data';
+
+//GST PORTAL
+import Gst_verification from 'components/pages/GstPortalpage/Gst-verification';
+
+//sadmin master
+import Stock_reposting from 'components/pages/SadMinMaster/Stock-reposting';
+import Field_reposting from 'components/pages/SadMinMaster/Field-reposting';
+import Formate_parameter from 'components/pages/SadMinMaster/Format-parameter';
+import Ledger_reposting from 'components/pages/SadMinMaster/Ledger-reposting';
+import Miscellaneous_master from 'components/pages/SadMinMaster/Miscellaneous-master';
+import Sms_master from 'components/pages/SadMinMaster/Sms-master';
+import User_master from 'components/pages/SadMinMaster/User-master';
+import Config_parameter from 'components/pages/SadMinMaster/Config-parameter';
+
+
 
 var dashRoutes = [
   {
@@ -76,30 +143,30 @@ var dashRoutes = [
   },
 
   
-  {
-    collapse: true,
-    name: "DASHBOARD",
-    rtlName: "صفحات1",
-    icon: Image,
-    state: "das_pageCollapse",
-    views: [
-      {
-        path: "/dashboard60",
-        name: "NSPODASH",
-        rtlName: "عالتسعير",
-        mini: "N",
-        rtlMini: "ع",
-        component: Dashboard,
-        layout: "/admin"
-      }
-    ]
-  },
+  // {
+  //   collapse: true,
+  //   name: "DASHBOARD",
+  //   rtlName: "صفحات1",
+  //   icon: Image,
+  //   state: "das_pageCollapse",
+  //   views: [
+  //     {
+  //       path: "/dashboard60",
+  //       name: "NSPODASH",
+  //       rtlName: "عالتسعير",
+  //       mini: "N",
+  //       rtlMini: "ع",
+  //       component: Dashboard,
+  //       layout: "/admin"
+  //     }
+  //   ]
+  // },
 
   {
     collapse: true,
     name: "COMPANY MASTER",
     rtlName: "صفحات",
-    icon: Image,
+    icon: Apps,
     state: "company_master_Collapse",
     views: [
       {
@@ -208,7 +275,7 @@ var dashRoutes = [
     collapse: true,
     name: "MASTER",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "master_pageCollapse",
     views: [
       {
@@ -299,133 +366,133 @@ var dashRoutes = [
     collapse: true,
     name: "Account",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "account_pageCollapse",
     views: [
       {
-        path: "/dashboard21",
+        path: "/ReceiptVoucher",
         name: "RECEIPT VOUCHER",
         rtlName: "عالتسعير",
         mini: "RV",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Receipt_voucher,
         layout: "/admin"
       },
       {
-        path: "/dashboard22",
+        path: "/ReportAccount",
         name: "REPORT - ACCOUNT",
         rtlName: "صودعم رتل",
         mini: "RA",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Report_account,
         layout: "/admin"
       },
       {
-        path: "/dashboard23",
+        path: "/ServiceVoucher",
         name: "SERVICE VOUCHER",
         rtlName: "تيالجدول الزمني",
         mini: "SV",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Service_voucher,
         layout: "/admin"
       },
       {
-        path: "/dashboard24",
+        path: "/PaymentVoucher",
         name: "PAYMENT VOUCHER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "PV",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Payment_voucher,
         layout: "/admin"
       },
       {
-        path: "/dashboard25",
+        path: "/JournalVoucher",
         name: "JOURNAL VOUCHER",
         rtlName: "تسجيل",
         mini: "JV",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Journal_voucher,
         layout: "/admin"
       },
       {
-        path: "/dashboard26",
+        path: "/MultiledgerReport",
         name: "MULTI LEDGER REPORT",
         rtlName: "اقفل الشاشة",
         mini: "MLR",
         rtlMini: "هذاع",
-        component: Dashboard,
+        component: Multiledger_report,
         layout: "/admin"
       },
       {
-        path: "/dashboard27",
+        path: "/LedgerReport",
         name: "LEDGER REPORT",
         rtlName: "ملف تعريفي للمستخدم",
         mini: "LR",
         rtlMini: "شع",
-        component: Dashboard,
+        component: Ledger_report,
         layout: "/admin"
       },
       {
-        path: "/dashboard28",
+        path: "/Adjustment",
         name: "ADJUSTMENT",
         rtlName: "صفحة الخطأ",
         mini: "A",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Adjustment,
         layout: "/admin"
       },
       {
-        path: "/dashboard29",
+        path: "/DebtorsPendingBill",
         name: "DEBTORS PENDING BILL",
         rtlName: "صفحة الخطأ",
         mini: "DPB",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Debtorspending_bill,
         layout: "/admin"
       },
       {
-        path: "/dashboard30",
+        path: "/CreditorsPendingBill",
         name: "CREDITORS PENDING BILL",
         rtlName: "صفحة الخطأ",
         mini: "CPB",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Creditorspending_bill,
         layout: "/admin"
       },
       {
-        path: "/dashboard31",
+        path: "/BankReconciliation",
         name: "BANK RECONCILIATION",
         rtlName: "صفحة الخطأ",
         mini: "BR",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Bankreconciliation,
         layout: "/admin"
       },
       {
-        path: "/dashboard32",
+        path: "/ClearCheckEntryList",
         name: "CLEAR CHECK ENTRY LIST",
         rtlName: "صفحة الخطأ",
         mini: "CCEL",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: ClearCheckentry_list,
         layout: "/admin"
       },
       {
-        path: "/dashboard33",
+        path: "/DebitNote",
         name: "DEBIT NOTE",
         rtlName: "صفحة الخطأ",
         mini: "DN",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Debit_note,
         layout: "/admin"
       },
       {
-        path: "/dashboard34",
+        path: "/Credit_note",
         name: "CREDIT NOTE",
         rtlName: "صفحة الخطأ",
         mini: "CN",
         rtlMini: "البريد",
-        component: Dashboard,
+        component: Credit_note,
         layout: "/admin"
       },
     ]
@@ -434,52 +501,52 @@ var dashRoutes = [
     collapse: true,
     name: "PURCHASE",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "purchase_pageCollapse",
     views: [
       {
-        path: "/dashboard35",
+        path: "/PurchaseOrder",
         name: "PURCHASE ORDER",
         rtlName: "عالتسعير",
         mini: "PO",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Purchase_order,
         layout: "/admin"
       },
       {
-        path: "/dashboard36",
+        path: "/GoodReciept",
         name: "GOODS RECEIPT",
         rtlName: "صودعم رتل",
         mini: "GR",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Good_reciept,
         layout: "/admin"
       },
       {
-        path: "/dashboard37",
+        path: "/PurchaseInvoice",
         name: "PURCHASE INVOICE",
         rtlName: "تيالجدول الزمني",
         mini: "PI",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Purchase_invoice,
         layout: "/admin"
       },
       {
-        path: "/dashboard38",
+        path: "/PurchaseReturn",
         name: "PURCHASE RETURN",
         rtlName: "هعذاتسجيل الدخول",
         mini: "PR ",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Purchase_return,
         layout: "/admin"
       },
       {
-        path: "/dashboard39",
+        path: "/JournalVoucher",
         name: "JOURNAL VOUCHER",
         rtlName: "تسجيل",
         mini: "JV",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Journal_voucher,
         layout: "/admin"
       }
     ]
@@ -489,52 +556,52 @@ var dashRoutes = [
     collapse: true,
     name: "SALE",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "Sale_pageCollapse",
     views: [
       {
-        path: "/dashboard40",
+        path: "/SalesOrder",
         name: "SALES ORDER",
         rtlName: "عالتسعير",
         mini: "SO",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Sales_oredr,
         layout: "/admin"
       },
       {
-        path: "/dashboard41",
+        path: "/GoodsDispatch",
         name: "GOODS DISPATCH",
         rtlName: "صودعم رتل",
         mini: "GD",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Goods_Dispatch,
         layout: "/admin"
       },
       {
-        path: "/dashboard42",
+        path: "/SalesInvoice",
         name: "SALES INVOICE",
         rtlName: "تيالجدول الزمني",
         mini: "SI",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Sales_invoice,
         layout: "/admin"
       },
       {
-        path: "/dashboard43",
+        path: "/SalesReturn",
         name: "SALES RETURN",
         rtlName: "هعذاتسجيل الدخول",
         mini: "SR",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Sales_return,
         layout: "/admin"
       },
       {
-        path: "/dashboard44",
+        path: "/ReportSale",
         name: "REPORT - SALE",
         rtlName: "تسجيل",
         mini: "RS",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Report_sale,
         layout: "/admin"
       }
     ]
@@ -544,79 +611,79 @@ var dashRoutes = [
     collapse: true,
     name: "INVENTORY",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "inventory_pageCollapse",
     views: [
       {
-        path: "/dashboard45",
+        path: "/OpeningStock",
         name: "OPENING STOCK",
         rtlName: "عالتسعير",
         mini: "OS",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Opening_stock,
         layout: "/admin"
       },
       {
-        path: "/dashboard46",
+        path: "/StockTransfer",
         name: "STOCK TRANSFER",
         rtlName: "صودعم رتل",
         mini: "ST",
         rtlMini: "صو",
-        component: Dashboard,
+        component: StockTransfer,
         layout: "/admin"
       },
       {
-        path: "/dashboard47",
+        path: "/StockTransferRequest",
         name: "STOCK TRANSFER REQUEST",
         rtlName: "تيالجدول الزمني",
         mini: "STR",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Globalitemwisereport,
         layout: "/admin"
       },
       {
-        path: "/dashboard48",
+        path: "/StoreReceipt",
         name: "STORE RECEIPT",
         rtlName: "هعذاتسجيل الدخول",
         mini: "SR",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: StoreReceipt,
         layout: "/admin"
       },
       {
-        path: "/dashboard49",
+        path: "/ReportEnventory",
         name: "REPORT - INVENTORY",
         rtlName: "تسجيل",
         mini: "RI",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Report_enventory,
         layout: "/admin"
       },
       {
-        path: "/dashboard50",
+        path: "/StockSummary",
         name: "STOCK SUMMARY",
         rtlName: "تسجيل",
         mini: "SS",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Stock_summary,
         layout: "/admin"
       },
       {
-        path: "/dashboard51",
+        path: "/MaterialRequistion",
         name: "MATERIAL REQUISTION",
         rtlName: "تسجيل",
         mini: "MR",
         rtlMini: "صع",
-        component: Dashboard,
+        component: MaterialRequistion,
         layout: "/admin"
       },
       {
-        path: "/dashboard52",
+        path: "/PurchaseIndent",
         name: "PURCHASE INDENT",
         rtlName: "تسجيل",
         mini: "PI",
         rtlMini: "صع",
-        component: Dashboard,
+        component: Purchase_indent,
         layout: "/admin"
       },
 
@@ -627,43 +694,43 @@ var dashRoutes = [
     collapse: true,
     name: "PRODUCTION",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "production_pageCollapse",
     views: [
       {
-        path: "/dashboard53",
+        path: "/CashewProduction",
         name: "CASHEW PRODUCTION",
         rtlName: "عالتسعير",
         mini: "CP",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Cashew_production,
         layout: "/admin"
       },
       {
-        path: "/dashboard54",
+        path: "/ReportProduction",
         name: "REPORT - PRODUCTION",
         rtlName: "صودعم رتل",
         mini: "RP",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Report_production,
         layout: "/admin"
       },
       {
-        path: "/dashboard55",
+        path: "/Bom",
         name: "BOM",
         rtlName: "تيالجدول الزمني",
         mini: "B",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Bom,
         layout: "/admin"
       },
       {
-        path: "/dashboard56",
+        path: "/ProductionVoucher",
         name: "PRODUCTION VOUCHER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "PV",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Production_voucher,
         layout: "/admin"
       }
     ]
@@ -675,34 +742,34 @@ var dashRoutes = [
     collapse: true,
     name: "REPORT",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "report_pageCollapse",
     views: [
       {
-        path: "/dashboard57",
+        path: "/GlobalItemWiseReport",
         name: "GLOBAL ITEM WISE REPORT",
         rtlName: "عالتسعير",
         mini: "GIWR",
         rtlMini: "ع",
-        component: Dashboard,
+        componen:Globalitemwisereport,
         layout: "/admin"
       },
       {
-        path: "/dashboard58",
+        path: "/GlobalReportForStatem",
         name: "GLOBAL REPORT FOR STATEMENT",
         rtlName: "صودعم رتل",
         mini: "GRFS",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Globalreportfor_statem,
         layout: "/admin"
       },
       {
-        path: "/dashboard59",
+        path: "/SalerelatedReports",
         name: "SALE RELATED REPORTS",
         rtlName: "تيالجدول الزمني",
         mini: "SRR",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Salerelated_reports,
         layout: "/admin"
       }
     ]
@@ -713,16 +780,16 @@ var dashRoutes = [
     collapse: true,
     name: "DATA TRANSFER ",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "data_tr_pageCollapse",
     views: [
       {
-        path: "/dashboard61",
+        path: "/DtaaTransfer",
         name: "DATA TRANSFER FRM PRE YR TO NXT YR",
         rtlName: "عالتسعير",
         mini: "DT",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Dtaa_transfer,
         layout: "/admin"
       }
     ]
@@ -732,16 +799,16 @@ var dashRoutes = [
     collapse: true,
     name: "EXPORT DATA FOR TALLY",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "ex_d_tr_pageCollapse",
     views: [
       {
-        path: "/dashboard62",
+        path: "/TallyexportData",
         name: "TALLY EXPORT DATA",
         rtlName: "عالتسعير",
         mini: "TED",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Tallyexport_data,
         layout: "/admin"
       }
     ]
@@ -751,79 +818,79 @@ var dashRoutes = [
     collapse: true,
     name: "SADMIN MASTER",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "s_a_pageCollapse",
     views: [
       {
-        path: "/dashboard63",
+        path: "/StockReposting",
         name: "STOCK REPOSTING",
         rtlName: "عالتسعير",
         mini: "SR",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Stock_reposting,
         layout: "/admin"
       },
       {
-        path: "/dashboard64",
+        path: "/FieldReposting",
         name: "FIELD REPOSTING",
         rtlName: "صودعم رتل",
         mini: "FR",
         rtlMini: "صو",
-        component: Dashboard,
+        component: Field_reposting,
         layout: "/admin"
       },
       {
-        path: "/dashboard65",
+        path: "/LedgerReposting",
         name: "LEDGER REPOSTING",
         rtlName: "تيالجدول الزمني",
         mini: "LR",
         rtlMini: "تي",
-        component: Dashboard,
+        component: Ledger_reposting,
         layout: "/admin"
       },
       {
-        path: "/dashboard66",
+        path: "/UserMaster",
         name: "USER MASTER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "UM",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: User_master,
         layout: "/admin"
       },
       {
-        path: "/dashboard67",
+        path: "/MiscellaneousMaster",
         name: "MISCELLANEOUS MASTER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "MM",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Miscellaneous_master,
         layout: "/admin"
       },
       {
-        path: "/dashboard68",
+        path: "/FormateParameter",
         name: "FORMAT PARAMETER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "FP",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Formate_parameter,
         layout: "/admin"
       },
       {
-        path: "/dashboard69",
+        path: "/ConfigParameter",
         name: "CONFIG PARAMETER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "CP",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Config_parameter,
         layout: "/admin"
       },
       {
-        path: "/dashboard70",
+        path: "/SmsMaster",
         name: "SMS MASTER",
         rtlName: "هعذاتسجيل الدخول",
         mini: "SM",
         rtlMini: "هعذا",
-        component: Dashboard,
+        component: Sms_master,
         layout: "/admin"
       }
     ]
@@ -832,16 +899,16 @@ var dashRoutes = [
     collapse: true,
     name: "GST PORTAL",
     rtlName: "صفحات1",
-    icon: Image,
+    icon: Apps,
     state: "gst_pageCollapse",
     views: [
       {
-        path: "/dashboard70",
+        path: "/GstVerification",
         name: "GST VERIFICATION",
         rtlName: "عالتسعير",
         mini: "GV",
         rtlMini: "ع",
-        component: Dashboard,
+        component: Gst_verification,
         layout: "/admin"
       }
     ]
