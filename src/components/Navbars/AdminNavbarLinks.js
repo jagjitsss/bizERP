@@ -72,7 +72,7 @@ export default function HeaderLinks(props) {
   });
   return (
     <div className={wrapper}>
-      <CustomInput
+      {/* <CustomInput
         rtlActive={rtlActive}
         formControlProps={{
           className: classes.top + " " + classes.search
@@ -93,7 +93,7 @@ export default function HeaderLinks(props) {
         className={searchButton}
       >
         <Search className={classes.headerLinksSvg + " " + classes.searchIcon} />
-      </Button>
+      </Button> */}
 {/* <Button
         color="transparent"
         simple

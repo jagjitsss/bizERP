@@ -130,6 +130,9 @@ import Sms_master from 'components/pages/SadMinMaster/Sms-master';
 import User_master from 'components/pages/SadMinMaster/User-master';
 import Config_parameter from 'components/pages/SadMinMaster/Config-parameter';
 
+//add new sreies
+import Add_newSeries from 'components/pages/company-master/Add-newSeries';
+
 
 
 var dashRoutes = [
@@ -214,6 +217,17 @@ var dashRoutes = [
         component: Series_master,
         layout: "/admin"
       },
+      {
+        path: "/AddnewUser",
+        name: "Add NEW SERIES MASTER",
+        rtlName: "تسجيل",
+        mini: "SM",
+        rtlMini: "صع",
+        component: Add_newSeries,
+        layout: "/admin"
+      },
+     
+    
       {
         path: "/ScheduleMaster",
         name: "SCHEDULE MASTER",

@@ -22,7 +22,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import AuthLayout from "layouts/Auth.js";
 import RtlLayout from "layouts/RTL.js";
 import AdminLayout from "layouts/Admin.js";
-
+import Add_newSeries from 'components/pages/company-master/Add-newSeries';
 import "assets/scss/material-dashboard-pro-react.scss?v=1.9.0";
 
 const hist = createBrowserHistory();
@@ -33,6 +33,7 @@ ReactDOM.render(
       <Route path="/rtl" component={RtlLayout} />
       <Route path="/auth" component={AuthLayout} />
       <Route path="/admin" component={AdminLayout} />
+      <Route path="/AddnewUser" component={Add_newSeries} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </Router>,

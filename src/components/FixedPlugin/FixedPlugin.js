@@ -49,9 +49,10 @@ export default function FixedPlugin(props) {
       className={"fixed-plugin" + (props.rtlActive ? " fixed-plugin-rtl" : "")}
     >
       <div id="fixedPluginClasses" className={props.fixedClasses}>
-        <div onClick={handleClick}>
+        {/* setting icons */}
+        {/* <div onClick={handleClick}>
           <i className="fa fa-cog fa-2x" />
-        </div>
+        </div> */}
         <ul className="dropdown-menu">
           <li className="header-title">SIDEBAR FILTERS</li>
           <li className="adjustments-line">
