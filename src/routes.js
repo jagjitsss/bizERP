@@ -71,6 +71,10 @@ import Purchase_order from 'components/pages/purchase-pages/Purchase-order';
 import Journal_voucher from 'components/pages/purchase-pages/Purchase-return';
 import Purchase_invoice from 'components/pages/purchase-pages/Purchase-invoice';
 import Purchase_return from 'components/pages/purchase-pages/Purchase-return';
+import Po_against_indent from 'components/pages/purchase-pages/po_against_indent';
+import All_pending_orders from 'components/pages/purchase-pages/all_pending_orders';
+import New_entry from 'components/pages/purchase-pages/new_entry';
+
 
 //SALE PAGES
 import Sales_oredr from 'components/pages/salepages/Sales-order';
@@ -552,6 +556,31 @@ var dashRoutes = [
         mini: "PR ",
         rtlMini: "هعذا",
         component: Purchase_return,
+        layout: "/admin"
+      },{
+        path: "/po-against-indent",
+        name: "PO Against Indent",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "PR ",
+        rtlMini: "هعذا",
+        component: Po_against_indent,
+        layout: "/admin"
+      },{
+        path: "/all-pending-orders",
+        name: "All Pending Orders",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "PR ",
+        rtlMini: "هعذا",
+        component: All_pending_orders,
+        layout: "/admin"
+      },
+      {
+        path: "/new-entry",
+        name: "New Entry",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "PR ",
+        rtlMini: "هعذا",
+        component: New_entry,
         layout: "/admin"
       },
       {

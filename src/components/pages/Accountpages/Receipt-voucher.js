@@ -2,7 +2,7 @@ import React from 'react';
 function Receipt_voucher(){
     return(
         <>
-        <h2>ReceiptVoucher</h2>
+        <h4 class="jss1400">RECEIPT VOUCHER - (168 )</h4>
         </>
     )
 }
