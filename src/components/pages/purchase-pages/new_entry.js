@@ -197,17 +197,11 @@ function Purchase_order() {
         <GridItem xs={12} sm={2} md={2}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>Series</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>Series</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
                 <Select
-                  MenuProps={{
-                    className: classes.selectMenu,
-                  }}
-                  classes={{
-                    select: classes.select,
-                  }}
-                  onChange={handleSimple}
+                  
                 >
                   {/* <MenuItem
                             
@@ -222,7 +216,7 @@ function Purchase_order() {
                   <MenuItem
                     classes={{
                       root: classes.selectMenuItem,
-                      selected: classes.selectMenuItemSelected,
+                      //selected: classes.selectMenuItemSelected,
                     }}
                     value="2"
                   >
@@ -237,8 +231,8 @@ function Purchase_order() {
         <GridItem xs={2} sm={2} md={2}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>Date</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>Date</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
                 <Datetime inputProps={{ placeholder: "Date" }} />
               </FormControl>
@@ -249,10 +243,10 @@ function Purchase_order() {
         <GridItem xs={12} sm={2} md={2}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>Party</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>Party</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" />
+                <TextField required id="standard-required" defaultValue="" placeholder="Party"/>
               </FormControl>
             </CardBody>
           </Card>
@@ -261,10 +255,10 @@ function Purchase_order() {
         <GridItem xs={12} sm={3} md={3}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>Short Name</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>Short Name</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" />
+                <TextField required id="standard-required" defaultValue="" placeholder="Short Name"/>
               </FormControl>
               <FormControlLabel
                 control={<Checkbox name="gilad" />}
@@ -277,39 +271,34 @@ function Purchase_order() {
 
       <GridContainer>
         <GridItem xs={12} sm={2} md={2}>
-          <Card>
-            <CardBody>
-              <InputLabel className={classes.label}>Order Ref No.</InputLabel>
-              <br />
+            {/* <CustomInput
+                labelText="Order Ref No"
+                id="email_adress"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  type: "email"
+                }}
+              /> */}
               <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" />
+                <TextField required id="standard-required" defaultValue="" placeholder="Order Ref No" />
               </FormControl>
-            </CardBody>
-          </Card>
+          
         </GridItem>
 
         <GridItem xs={2} sm={2} md={2}>
-          <Card>
-            <CardBody>
-              <InputLabel className={classes.label}>Delivery Date</InputLabel>
-              <br />
+           {/* <InputLabel className={classes.label}>Delivery Date</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
-                <Datetime inputProps={{ placeholder: "Date" }} />
+                <Datetime inputProps={{ placeholder: "Delivery Date" }} />
               </FormControl>
-            </CardBody>
-          </Card>
         </GridItem>
 
         <GridItem xs={12} sm={2} md={2}>
-          <Card>
-            <CardBody>
-              <InputLabel className={classes.label}>P.O Terms</InputLabel>
-              <br />
               <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" />
+                <TextField required id="standard-required" defaultValue="" placeholder="P.O Terms" />
               </FormControl>
-            </CardBody>
-          </Card>
         </GridItem>
       </GridContainer>
 
