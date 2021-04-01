@@ -28,9 +28,10 @@ export default function CustomTabs(props) {
     [classes.cardTitle]: true,
     [classes.cardTitleRTL]: rtlActive
   });
+  console.log(headerColor)
   return (
     <Card plain={plainTabs}>
-      <CardHeader color={headerColor} plain={plainTabs}>
+      <CardHeader style={{background:"#3f51b5"}} plain={plainTabs}>
         {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
         <Tabs
           value={value}
@@ -94,7 +95,8 @@ CustomTabs.propTypes = {
     "danger",
     "info",
     "primary",
-    "rose"
+    "rose",
+    "3f51b5"
   ]),
   title: PropTypes.string,
   tabs: PropTypes.arrayOf(

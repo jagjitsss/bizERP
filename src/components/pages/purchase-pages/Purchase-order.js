@@ -97,10 +97,11 @@ function Purchase_order() {
         <GridItem xs={12} sm={3} md={3}>
           <Card>
             <CardBody>
+              {/* <InputLabel className={classes.label}>Fr Date</InputLabel>
+              <br /> */}
               <InputLabel className={classes.label}>Fr Date</InputLabel>
-              <br />
               <FormControl fullWidth>
-                <Datetime inputProps={{ placeholder: "Fr Date" }} />
+                <Datetime />
               </FormControl>
             </CardBody>
           </Card>
@@ -109,10 +110,11 @@ function Purchase_order() {
         <GridItem xs={12} sm={3} md={3}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>To Date</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>To Date</InputLabel>
+              <br /> */}
+               <InputLabel className={classes.label}>To Date</InputLabel>
               <FormControl fullWidth>
-                <Datetime inputProps={{ placeholder: "To Date" }} />
+                <Datetime  />
               </FormControl>
             </CardBody>
           </Card>
@@ -121,8 +123,9 @@ function Purchase_order() {
         <GridItem xs={12} sm={3} md={3}>
           <Card>
             <CardBody>
+              {/* <InputLabel className={classes.label}>Series</InputLabel>
+              <br /> */}
               <InputLabel className={classes.label}>Series</InputLabel>
-              <br />
               <FormControl fullWidth>
                 <Select
                   MenuProps={{
@@ -160,8 +163,9 @@ function Purchase_order() {
         <GridItem xs={12} sm={3} md={3}>
           <Card>
             <CardBody>
+              {/* <InputLabel className={classes.label}>Party</InputLabel>
+              <br /> */}
               <InputLabel className={classes.label}>Party</InputLabel>
-              <br />
               <FormControl fullWidth>
                 <TextField required id="standard-required" defaultValue="" />
               </FormControl>

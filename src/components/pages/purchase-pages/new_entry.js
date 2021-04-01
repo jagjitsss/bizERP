@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles,createMuiTheme, MuiThemeProvider  } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
@@ -35,6 +35,8 @@ import Check from "@material-ui/icons/Check";
 import Chip from "@material-ui/core/Chip";
 import DeleteIcon from "@material-ui/icons/Delete";
 
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
 // const useStyles = makeStyles((theme) => ({
 //     root: {
 //       flexGrow: 1,
@@ -50,6 +52,13 @@ import styles from "assets/jss/material-dashboard-pro-react/views/buttonsStyle.j
 
 //const useStyles = makeStyles(styles);
 const useStyles = makeStyles(styles);
+
+const colortheme = createMuiTheme({
+  palette: {
+    primary: { main: "#e91e63", contrastText: "#fff" },
+    secondary: { main: "#03a9f4", contrastText: "#fff" }
+  }
+});
 
 function Purchase_order() {
   const classes = useStyles();
@@ -116,10 +125,12 @@ function Purchase_order() {
           CREATE PURCHASE ORDER - (105)
         </h4>
 
+        <GridItem xs={12} sm={6} md={6}>
+
         <Button
           borderRadius="50%"
           style={{
-            backgroundColor: "#9c27b0",
+            //backgroundColor: "#9c27b0",
             height: "36px",
             maxWidth: "42px",
           }}
@@ -131,7 +142,7 @@ function Purchase_order() {
           <span class="material-icons">description</span>
         </Button>
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{ height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -141,7 +152,7 @@ function Purchase_order() {
           <span class="material-icons">disabled_by_default</span>
         </Button>
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{ height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -151,7 +162,7 @@ function Purchase_order() {
           <span class="material-icons">print</span>
         </Button>
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{ height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -161,7 +172,7 @@ function Purchase_order() {
           <span class="material-icons">email</span>
         </Button>
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{  height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -171,7 +182,7 @@ function Purchase_order() {
           <span class="material-icons">sms</span>
         </Button>
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{  height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -182,7 +193,7 @@ function Purchase_order() {
         </Button>
 
         <Button
-          style={{ backgroundColor: "#9c27b0", height: "36px", width: "3px" }}
+          style={{  height: "36px", width: "3px" }}
           variant="contained"
           className={classes.button}
           round
@@ -191,7 +202,44 @@ function Purchase_order() {
         >
           <span class="material-icons">thumb_up</span>
         </Button>
+
+        </GridItem>
+        <GridItem xs={12} sm={3} md={3} style={{position:"absolute",right:"0",top:"56px",width: "100%"}}>
+            <Card>
+              <CardBody>
+              <div>
+      
+                  <div className={classes.typo}>
+                        <div className={classes.note}>Usr Rgts: ADD/EDIT/CHK/APRV/DEL </div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>PO NO:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>Basic Amt:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>Expense:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>GST Amt:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>Bill Amt:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>Round Off:</div>
+                      </div>
+                      <div className={classes.typo}>
+                        <div className={classes.note}>Cls Baln:</div>
+                      </div>
+                      
+                </div>
+              </CardBody>
+          </Card>
+      </GridItem>
       </Grid>
+      
 
       <GridContainer>
         <GridItem xs={12} sm={2} md={2}>
@@ -200,10 +248,11 @@ function Purchase_order() {
               {/* <InputLabel className={classes.label}>Series</InputLabel>
               <br /> */}
               <FormControl fullWidth>
-                <Select
+              
+                <Select placeholder="P.O Terms"
                   
                 >
-                  {/* <MenuItem
+                  <MenuItem
                             
                             classes={{
                               root: classes.selectMenuItem
@@ -212,7 +261,7 @@ function Purchase_order() {
                             value=""
                           >
                             Please Select
-                          </MenuItem> */}
+                          </MenuItem>
                   <MenuItem
                     classes={{
                       root: classes.selectMenuItem,
@@ -271,47 +320,297 @@ function Purchase_order() {
 
       <GridContainer>
         <GridItem xs={12} sm={2} md={2}>
-            {/* <CustomInput
-                labelText="Order Ref No"
-                id="email_adress"
-                formControlProps={{
-                  fullWidth: true
-                }}
-                inputProps={{
-                  type: "email"
-                }}
-              /> */}
-              <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" placeholder="Order Ref No" />
-              </FormControl>
-          
-        </GridItem>
+            <Card>
+              <CardBody>
+                {/* <InputLabel className={classes.label}>Party</InputLabel>
+                <br /> */}
+                <FormControl fullWidth>
+                  <TextField required id="standard-required" defaultValue="" placeholder="Order Ref No"/>
+                </FormControl>
+              </CardBody>
+            </Card>
+          </GridItem>
 
-        <GridItem xs={2} sm={2} md={2}>
-           {/* <InputLabel className={classes.label}>Delivery Date</InputLabel>
-              <br /> */}
-              <FormControl fullWidth>
-                <Datetime inputProps={{ placeholder: "Delivery Date" }} />
-              </FormControl>
-        </GridItem>
+          <GridItem xs={12} sm={2} md={2}>
+            <Card>
+              <CardBody>
+                {/* <InputLabel className={classes.label}>Party</InputLabel>
+                <br /> */}
+                <FormControl fullWidth>
+                  <Datetime inputProps={{ placeholder: "Delivery Date" }} />
+                </FormControl>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={2} md={2}>
+            <Card>
+              <CardBody>
+                {/* <InputLabel className={classes.label}>Party</InputLabel>
+                <br /> */}
+                <FormControl fullWidth>
+                  <TextField required id="standard-required" defaultValue="" placeholder="P.O Terms"/>
+                </FormControl>
+              </CardBody>
+            </Card>
+          </GridItem>
 
-        <GridItem xs={12} sm={2} md={2}>
-              <FormControl fullWidth>
-                <TextField required id="standard-required" defaultValue="" placeholder="P.O Terms" />
-              </FormControl>
-        </GridItem>
+      
+
       </GridContainer>
 
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
             title=""
-            headerColor="primary"
+            headerColor="#3f51b5"
+            theme={colortheme}
             tabs={[
               {
                 tabName: "Item Details",
                 tabIcon: DetailsIcon,
-                tabContent: <p>Herere11111111222</p>,
+                tabContent: <div>
+                <GridContainer>
+                  <GridItem xs={12} sm={1} md={1} p={0} style={{padding:"0 0px 0 15px!important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust. Mob NO.
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Item Code"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={2} md={2} style={{padding:"0 0px 0 15px !important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Name
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Item Name / Avail Stock"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+                  <GridItem xs={12} sm={1} md={1} style={{padding:"0 0px 0 15px !important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Aadhar No
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Qty/"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={1} md={1} style={{padding:"0 0px 0 15px !important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Addr.
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="SubUnit/"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={2} md={1} style={{padding:"0px 0px 0 15px;"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Addr.
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Net Wt Qty/"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={2} md={2} style={{padding:"0 0px 0 15px !important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Addr.
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Rate On:"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={3} md={2} style={{padding:"0 0px 0 15px !important"}}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Addr.
+                        </InputLabel>
+                        <br /> */}
+                        <FormControl fullWidth>
+                          <TextField
+                            required
+                            id="standard-required"
+                            defaultValue=""
+                            placeholder="Amount"
+                          />
+                        </FormControl>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem xs={12} sm={3} md={1} style={{marginTop: "43px"}}>
+                    
+                      <Button
+                        borderRadius="50%"
+                        style={{
+                         // backgroundColor: "#9c27b0",
+                          //height: "36px",
+                         // maxWidth: "15px",
+                        }}
+                        variant="contained"
+                        round
+                        color="primary"
+                        className={classes.marginRight}
+                      >
+                        Add
+                      </Button>
+                    
+                  </GridItem>
+
+                  <GridItem xs={12} sm={3} md={1} style={{marginTop: "43px"}}>
+                    
+                      <Button
+                        borderRadius="50%"
+                        style={{
+                          //backgroundColor: "#9c27b0",
+                         // height: "36px",
+                          //maxWidth: "15px",
+                        }}
+                        variant="contained"
+                        round
+                        color="primary"
+                        className={classes.marginRight}
+                      >
+                        <span class="material-icons">sim_card_download</span>
+                      </Button>
+                     
+                  </GridItem>
+
+                 
+
+                  
+                </GridContainer>
+
+                <Table
+                    striped
+                    tableHead={[
+                      "Sr.No.",
+                      "Code",
+                      "Qty",
+                      "UOM",
+                      "Net Wt",
+                      "UOM",
+                      "Rate",
+                      "Basic Amt",
+                      "Total Amt",
+
+                    ]}
+                    tableData={[
+                      [
+                        "1",
+                        "Office",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "€ 25",
+                        "€ 1,225",
+                        "1,225",
+                      
+                      ],
+
+                      //{ total: true, colspan: "5", amount: "€12,999" }
+                    ]}
+                    customCellClasses={[
+                      classes.center,
+                      classes.right,
+                      classes.right,
+                    ]}
+                    customClassesForCells={[0, 5, 6]}
+                    customHeadCellClasses={[
+                      classes.center,
+                      classes.right,
+                      classes.right,
+                    ]}
+                    customHeadClassesForCells={[0, 5, 6]}
+                  />
+                   <GridContainer>
+                   <GridItem xs={12} sm={6} md={6}>
+                    <Card>
+                      <CardBody>
+                        {/* <InputLabel className={classes.label}>
+                          Cust Addr.
+                        </InputLabel>
+                        <br /> */}
+                      <TextareaAutosize
+                        rowsMax={4}
+                        aria-label="maximum height"
+                        placeholder="Remarks"
+                        defaultValue=""
+                        style={{width:"450px",height:"100px"}}
+                      />
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+                   
+                
+                  </GridContainer>
+              </div>
+            ,
               },
               {
                 tabName: "Dispatch Details",
@@ -322,10 +621,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Name
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -363,10 +662,11 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Mode
                             </InputLabel>
-                            <br />
+                            <br /> */}
+                            
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -405,15 +705,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Truck No
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Truck No"
                               />
                             </FormControl>
                           </CardBody>
@@ -422,15 +723,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Truck Type
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Truck Type"
                               />
                             </FormControl>
                           </CardBody>
@@ -440,15 +742,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               LR No
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="LR No"
                               />
                             </FormControl>
                           </CardBody>
@@ -459,10 +762,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Lr Date
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Datetime
                                 inputProps={{ placeholder: "Lr Date" }}
@@ -474,15 +777,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Distance(Km)
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="  Distance(Km)"
                               />
                             </FormControl>
                           </CardBody>
@@ -491,15 +795,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Driver Name
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Driver Name"
                               />
                             </FormControl>
                           </CardBody>
@@ -509,15 +814,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Mobile No
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Mobile No"
                               />
                             </FormControl>
                           </CardBody>
@@ -527,15 +833,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Remark
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Remark"
                               />
                             </FormControl>
                           </CardBody>
@@ -546,15 +853,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={4} md={4}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             Ship To Party Name
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Ship To Party Name"
                               />
                             </FormControl>
                           </CardBody>
@@ -564,15 +872,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Mobile No.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="  Mobile No."
                               />
                             </FormControl>
                           </CardBody>
@@ -581,8 +890,8 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
           <Card>
             <CardBody>
-              <InputLabel className={classes.label}>State</InputLabel>
-              <br />
+              {/* <InputLabel className={classes.label}>State</InputLabel>
+              <br /> */}
               <FormControl fullWidth>
                 <Select
                   MenuProps={{
@@ -622,15 +931,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             GSTIN No.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" GSTIN No."
                               />
                             </FormControl>
                           </CardBody>
@@ -639,15 +949,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             Freight Amt
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Freight Amt"
                               />
                             </FormControl>
                           </CardBody>
@@ -661,15 +972,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={4} md={4}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             Address
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Address"
                               />
                             </FormControl>
                           </CardBody>
@@ -678,15 +990,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             City
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="City"
                               />
                             </FormControl>
                           </CardBody>
@@ -696,15 +1009,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             Pincode
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Pincode"
                               />
                             </FormControl>
                           </CardBody>
@@ -714,21 +1028,23 @@ function Purchase_order() {
                     <GridItem xs={12} sm={2} md={2}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                             Email Id
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Email Id"
                               />
                             </FormControl>
                           </CardBody>
                         </Card>
                       </GridItem>
                     </GridContainer>
+                    
                     
                   </div>
                 ),
@@ -742,15 +1058,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Cust. Mob NO.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Cust. Mob NO."
                               />
                             </FormControl>
                           </CardBody>
@@ -760,15 +1077,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Cust Name
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Cust Name"
                               />
                             </FormControl>
                           </CardBody>
@@ -777,15 +1095,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Aadhar No
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Aadhar No"
                               />
                             </FormControl>
                           </CardBody>
@@ -795,15 +1114,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Cust Addr.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" Cust Addr."
                               />
                             </FormControl>
                           </CardBody>
@@ -813,10 +1133,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Sales Person
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -857,10 +1177,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               State
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -899,10 +1219,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               GST Party Type
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -941,10 +1261,10 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               GST Business Type
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <Select
                                 MenuProps={{
@@ -983,15 +1303,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               GST TIN No.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder=" GST TIN No."
                               />
                             </FormControl>
                           </CardBody>
@@ -1003,15 +1324,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               TDS Form
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="TDS Form"
                               />
                             </FormControl>
                           </CardBody>
@@ -1021,15 +1343,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               Party Aadhar Card No.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="Party Aadhar Card No."
                               />
                             </FormControl>
                           </CardBody>
@@ -1038,15 +1361,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               PAN No.
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="PAN No."
                               />
                             </FormControl>
                           </CardBody>
@@ -1056,15 +1380,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               CIN
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="CIN"
                               />
                             </FormControl>
                           </CardBody>
@@ -1073,15 +1398,16 @@ function Purchase_order() {
                       <GridItem xs={12} sm={3} md={3}>
                         <Card>
                           <CardBody>
-                            <InputLabel className={classes.label}>
+                            {/* <InputLabel className={classes.label}>
                               FSSAI NO
                             </InputLabel>
-                            <br />
+                            <br /> */}
                             <FormControl fullWidth>
                               <TextField
                                 required
                                 id="standard-required"
                                 defaultValue=""
+                                placeholder="FSSAI NO"
                               />
                             </FormControl>
                           </CardBody>
@@ -1150,7 +1476,10 @@ function Purchase_order() {
             ]}
           />
         </GridItem>
+       
+        
       </GridContainer>
+      
     </div>
   );
 }
